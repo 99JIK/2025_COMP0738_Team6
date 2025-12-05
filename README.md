@@ -2,7 +2,7 @@
 
 ##
 
-## 권구안's Todo list
+## K9Wan's Todo list
 
 ### Todos
 
@@ -12,7 +12,7 @@
 
 ### Done
 
-## 이도근's Todo list
+## Leedokeun0407's Todo list
 
 ### Todos
 
@@ -22,7 +22,7 @@
 
 ### Done
 
-## 김정인's Todo list
+## 99JIK's Todo list
 
 ### Todos
 
