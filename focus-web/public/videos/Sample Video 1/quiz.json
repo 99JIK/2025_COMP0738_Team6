@@ -1,0 +1,104 @@
+{
+  "problems": [
+    {
+      "problem": {"en": "What is 2 + 2?", "ko": "2 + 2는 무엇인가요?"},
+      "right": {"en": "4", "ko": "4"},
+      "wrong": [
+        {"en": "3", "ko": "3"},
+        {"en": "5", "ko": "5"},
+        {"en": "6", "ko": "6"},
+        {"en": "7", "ko": "7"}
+      ]
+    },
+    {
+      "problem": {"en": "What is the capital of France?", "ko": "프랑스의 수도는 어디인가요?"},
+      "right": {"en": "Paris", "ko": "파리"},
+      "wrong": [
+        {"en": "London", "ko": "런던"},
+        {"en": "Berlin", "ko": "베를린"},
+        {"en": "Rome", "ko": "로마"},
+        {"en": "Madrid", "ko": "마드리드"}
+      ]
+    },
+    {
+      "problem": {"en": "Which planet is closest to the Sun?", "ko": "태양에 가장 가까운 행성은?"},
+      "right": {"en": "Mercury", "ko": "수성"},
+      "wrong": [
+        {"en": "Venus", "ko": "금성"},
+        {"en": "Earth", "ko": "지구"},
+        {"en": "Mars", "ko": "화성"},
+        {"en": "Jupiter", "ko": "목성"}
+      ]
+    },
+    {
+      "problem": {"en": "What color is the sky on a clear day?", "ko": "맑은 날 하늘의 색은?"},
+      "right": {"en": "Blue", "ko": "파랑"},
+      "wrong": [
+        {"en": "Red", "ko": "빨강"},
+        {"en": "Green", "ko": "초록"},
+        {"en": "Yellow", "ko": "노랑"},
+        {"en": "Purple", "ko": "보라"}
+      ]
+    },
+    {
+      "problem": {"en": "How many days are in a week?", "ko": "일주일은 며칠인가요?"},
+      "right": {"en": "7", "ko": "7"},
+      "wrong": [
+        {"en": "5", "ko": "5"},
+        {"en": "6", "ko": "6"},
+        {"en": "8", "ko": "8"},
+        {"en": "10", "ko": "10"}
+      ]
+    },
+    {
+      "problem": {"en": "What is H2O commonly known as?", "ko": "H2O는 무엇으로 알려져 있나요?"},
+      "right": {"en": "Water", "ko": "물"},
+      "wrong": [
+        {"en": "Salt", "ko": "소금"},
+        {"en": "Sugar", "ko": "설탕"},
+        {"en": "Oil", "ko": "기름"},
+        {"en": "Air", "ko": "공기"}
+      ]
+    },
+    {
+      "problem": {"en": "Which animal is known as the King of the Jungle?", "ko": "정글의 왕으로 알려진 동물은?"},
+      "right": {"en": "Lion", "ko": "사자"},
+      "wrong": [
+        {"en": "Tiger", "ko": "호랑이"},
+        {"en": "Elephant", "ko": "코끼리"},
+        {"en": "Bear", "ko": "곰"},
+        {"en": "Wolf", "ko": "늑대"}
+      ]
+    },
+    {
+      "problem": {"en": "What is 10 x 10?", "ko": "10 x 10은?"},
+      "right": {"en": "100", "ko": "100"},
+      "wrong": [
+        {"en": "10", "ko": "10"},
+        {"en": "50", "ko": "50"},
+        {"en": "110", "ko": "110"},
+        {"en": "1000", "ko": "1000"}
+      ]
+    },
+    {
+      "problem": {"en": "How many continents are there?", "ko": "대륙은 몇 개인가요?"},
+      "right": {"en": "7", "ko": "7"},
+      "wrong": [
+        {"en": "5", "ko": "5"},
+        {"en": "6", "ko": "6"},
+        {"en": "8", "ko": "8"},
+        {"en": "9", "ko": "9"}
+      ]
+    },
+    {
+      "problem": {"en": "What is the largest ocean on Earth?", "ko": "지구에서 가장 큰 바다는?"},
+      "right": {"en": "Pacific Ocean", "ko": "태평양"},
+      "wrong": [
+        {"en": "Atlantic Ocean", "ko": "대서양"},
+        {"en": "Indian Ocean", "ko": "인도양"},
+        {"en": "Arctic Ocean", "ko": "북극해"},
+        {"en": "Southern Ocean", "ko": "남극해"}
+      ]
+    }
+  ]
+}

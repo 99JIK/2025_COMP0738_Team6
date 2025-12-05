@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a1a2e">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script>
+    if (location.protocol === 'http:' && location.hostname !== 'localhost') {
+      location.replace('https:' + location.href.substring(5));
+    }
+  </script>
+  <link rel="manifest" href="/manifest.json">
+  <title>FOCUS</title>
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <button id="back-btn" class="icon-btn hidden" title="Back">
+        <span class="icon">&#8592;</span>
+      </button>
+      <h1>FOCUS</h1>
+      <div class="header-right">
+        <button id="lang-toggle" class="icon-btn" title="Language">
+          <span class="icon" id="lang-icon">EN</span>
+        </button>
+        <button id="debug-toggle" class="icon-btn hidden" title="Debug Mode">
+          <span class="icon">D</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="list-page">
+      <div class="page-title">
+        <h2 id="list-title">영상 목록</h2>
+      </div>
+      <div id="video-list"></div>
+    </main>
+
+    <div id="mode-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3 id="mode-modal-title">모드 선택</h3>
+        <div class="mode-options">
+          <button class="mode-btn" data-mode="normal">
+            <span class="mode-name" id="mode-normal-name">일반</span>
+            <span class="mode-desc" id="mode-normal-desc">일반적인 영상 플레이어</span>
+          </button>
+          <button class="mode-btn" data-mode="nocontrol">
+            <span class="mode-name" id="mode-nocontrol-name">조작 불가</span>
+            <span class="mode-desc" id="mode-nocontrol-desc">재생/일시정지 조작 불가</span>
+          </button>
+          <button class="mode-btn" data-mode="scoreonly">
+            <span class="mode-name" id="mode-scoreonly-name">점수만</span>
+            <span class="mode-desc" id="mode-scoreonly-desc">집중 점수만 표시</span>
+          </button>
+          <button class="mode-btn" data-mode="strict">
+            <span class="mode-name" id="mode-strict-name">엄격</span>
+            <span class="mode-desc" id="mode-strict-desc">집중 안 하면 일시정지, 볼륨 조절</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <main id="watch-page" class="hidden">
+      <div id="video-container">
+        <video id="learning-video" controls>
+          <source src="" type="video/mp4">
+        </video>
+        <div id="video-placeholder">
+          <button id="play-video-btn" class="primary-btn hidden">영상 시청</button>
+        </div>
+        <div id="unfocus-overlay" class="hidden">
+          <div class="unfocus-message" id="unfocus-message">집중해주세요!</div>
+        </div>
+      </div>
+
+      <div id="side-panel">
+        <div id="focus-indicator">
+          <div class="score-circle">
+            <span id="score-value">0</span>
+          </div>
+          <p id="status-text">준비 중</p>
+        </div>
+
+
+        <div id="camera-preview-container" class="hidden">
+          <video id="camera-preview" autoplay playsinline muted></video>
+          <canvas id="landmark-canvas"></canvas>
+        </div>
+      </div>
+    </main>
+
+    <main id="quiz-page" class="hidden">
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h2 id="quiz-title">Quiz</h2>
+          <div class="quiz-progress">
+            <span id="quiz-current">1</span> / <span id="quiz-total">10</span>
+          </div>
+        </div>
+        <div class="quiz-content">
+          <p id="quiz-question" class="quiz-question"></p>
+          <div id="quiz-answers" class="quiz-answers"></div>
+        </div>
+        <div id="quiz-result" class="quiz-result hidden">
+          <div class="result-score">
+            <span id="result-score-value">0</span><span id="result-score-unit">/100</span>
+          </div>
+          <button id="back-to-list-btn" class="primary-btn"></button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
