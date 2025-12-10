@@ -1,0 +1,104 @@
+{
+  "problems": [
+    {
+      "problem": {"en": "What does the Binomial Distribution represent", "ko": "이항 분포는 무엇을 나타냅니까?"},
+      "right": {"en": "Probability of k successes in n independent trials", "ko": "n번 독립 시행에서 k번 성공할 확률"},
+      "wrong": [
+        {"en": "Probability of success in a single trial", "ko": "한 번의 시행에서 성공할 확률"},
+        {"en": "Distribution when probability of success changes constrantly", "ko": "성공 확률이 계속 변할 때의 분포"},
+        {"en": "Number of events occurring in a continuous time", "ko": "연속적인 시간 동안 발생하는 사건의 횟수"},
+        {"en": "Probability of failing all n trials only", "ko": "n번의 시행에서 모두 실패할 확률만 나타냄"}
+      ]
+    },
+    {
+      "problem": {"en": "What is the comcept of 'Probabilities of Probabilities' introduced in the video meant to explain?", "ko": "영상에서 소개된 '확률의 확률' 개념은 무엇을 설명하기 위한 것입니까?"},
+      "right": {"en": "That the success probability p is not fixed but has a distribution", "ko": "성공 확률 p가 고정된 값이 아니라 분포를 가진다는 것"},
+      "wrong": [
+        {"en": "That the binomial formula is incorrect", "ko": "이항 분포의 공식이 틀렸다는 것"},
+        {"en": "That all events are dependent", "ko": "모든 사건은 독립적이지 않다는 것"},
+        {"en": "That probability cannot be calculated", "ko": "확률은 계산할 수 없다는 것"},
+        {"en": "That it always has a 50:50 probability", "ko": "항상 50:50의 확률을 가진다는 것"}
+      ]
+    },
+    {
+      "problem": {"en": "In the Amazon review example, between a seller with 2/2 positive reviews(100%) and one with 95/100(95%), who does the video suggest is mathematically 'more reliable'?", "ko": "아마존 리뷰 예시에서, 긍정 리뷰 2개인 판매자(2/2, 100%)와 긍정 리뷰 95개인 판매자(95/100, 95%) 중 영상은 수학적으로 누가 더 '신뢰할 만하다'고 제안합니까?"},
+      "right": {"en": "Seller with 95/100", "ko": "95/100 판매자"},
+      "wrong": [
+        {"en": "Seller with no reviews", "ko": "리뷰가 없는 판매자"},
+        {"en": "The cheaper seller", "ko": "가격이 싼 판매자"},
+        {"en": "Both are equal", "ko": "둘 다 동일함"},
+        {"en": "Seller with 2/2", "ko": "2/2 판매자"}
+      ]
+    },
+    {
+      "problem": {"en": "Before observing data, how was the initial assumption(Prior) about the success probability p set in the video?", "ko": "데이터를 관찰하기 전, 성공 확률 p에 대한 초기 가정(사전 확률, Prior)은 영상에서 어떻게 설정되었습니까?"},
+      "right": {"en": "Uniform Distribution", "ko": "0과 1사이의 균등 분포"},
+      "wrong": [
+        {"en": "Always 1", "ko": "항상 1"},
+        {"en": "Chi-squared Distribution", "ko": "카이제곱 분포"},
+        {"en": "Normal Distribution", "ko": "정규 분포"},
+        {"en": "Always 0", "ko": "항상 0"}
+      ]
+    },
+    {
+      "problem": {"en": "According to Laplace's Rule of Succession, if there are k successes in n trials, what is the estimated probabiltiy of the next trail being a success?", "ko": "라플라스의 후속 규칙에 따르면, n번의 시행중 k번 성공했을 때 다음 시행이 성공할 확률은 어떻게 추정됩니까?"},
+      "right": {"en": "(k+1)/(n+2)", "ko": "(k+1)/(n+2)"},
+      "wrong": [
+        {"en": "(k-1)/n", "ko": "(k-1)/n"},
+        {"en": "k/n", "ko": "k/n"},
+        {"en": "1-(k/n)", "ko": "1-(k/n)"},
+        {"en": "1/2", "ko": "1/2"}
+      ]
+    },
+    {
+      "problem": {"en": "As the number of reviews (data) increases, how does the shape of the probability density function for p change?", "ko": "리뷰(데이터)의 수가 많아질수록, 성공 확률 p에 대한 확률 밀도 함수 그래프의 모양은 어떻게 변합니까?"},
+      "right": {"en": "Becomes narrower and sharper", "ko": "점점 더 좁고 뾰족해진다"},
+      "wrong": [
+        {"en": "Converges 0", "ko": "0으로 수렴한다"},
+        {"en": "Does not change", "ko": "변하지 않는다"},
+        {"en": "Becomes wider and flatter", "ko": "점점 더 넓고 평평해진다"},
+        {"en": "Splits into two peaks", "ko": "두개의 봉우리로 갈라진다"}
+      ]
+    },
+    {
+      "problem": {"en": "In the 'Probability of Probabilities' distribution graph shown in the video, what does the horizontal axis (x-axis) represent?", "ko": "영상에서 보여주는 '확률의 확률 분포' 그래프에서, 가로축(x축)은 무엇을 나타냅니까?"},
+      "right": {"en": "The success probability p we are trying to estimate", "ko": "우리가 추정하려는 성공 확률 p"},
+      "wrong": [
+        {"en": "Number of trials", "ko": "시행 횟수"},
+        {"en": "Seller's revenue", "ko": "판매자의 수익"},
+        {"en": "Total number of reviews", "ko": "총 리뷰 개수"},
+        {"en": "Passage of time", "ko": "시간의 흐름"}
+      ]
+    },
+    {
+      "problem": {"en": "What approach did Laplace use to calculate 'the probability that the sun will rise tomorrow'?", "ko": "라플라스는 '해가 내일 뜰 확률'을 계산하기 위해 어떤 접근 방식을 사용했습니까?"},
+      "right": {"en": "Applying Rule of Succession to past data", "ko": "과거 데이터에 후속 규칙 적용"},
+      "wrong": [
+        {"en": "Relying on intuition", "ko": "직관에 의존"},
+        {"en": "Concluding it's impossible", "ko": "불가능하다고 결론"},
+        {"en": "Astronomical orbit calculations", "ko": "천문학적 궤도 계산"},
+        {"en": "Coin flipping", "ko": "동전 던지기"}
+      ]
+    },
+    {
+      "problem": {"en": "What must the total area under a Probability Density Function curve always equal?", "ko": "확률 밀도 함수(Probability Density Function) 그래프 아래의 전체 면적은 항상 얼마여야 합니까?"},
+      "right": {"en": "1", "ko": "1"},
+      "wrong": [
+        {"en": "0", "ko": "0"},
+        {"en": "n", "ko": "n"},
+        {"en": "Infinity", "ko": "무한대"},
+        {"en": "0.5", "ko": "0.5"}
+      ]
+    },
+    {
+      "problem": {"en": "Applying Laplace's Rule of Succession introduced in the video, what is the estimated probability that the next review will be positive for a seller with 2 out of 2 positive reviews (100%)?", "ko": "영상에서 소개된 라플라스의 후속 규칙을 적용했을 때, 2번 중 2번 긍정적인 리뷰(100%)를 받은 판매자의 '다음' 리뷰가 긍정적일 확률은 어떻게 추정됩니까?"},
+      "right": {"en": "75%", "ko": "75%"},
+      "wrong": [
+        {"en": "100%", "ko": "100%"},
+        {"en": "66.6%", "ko": "66.6%"},
+        {"en": "50%", "ko": "50%"},
+        {"en": "95%", "ko": "95%"}
+      ]
+    }
+  ]
+}

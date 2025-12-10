@@ -1,0 +1,104 @@
+{
+  "problems": [
+    {
+      "problem": {"en": "When picking a random real number between 0 and 1, what is the probability of picking exactly 0.7?", "ko": "0과 1 사이의 실수 중에서 무작위로 하나를 선택할 때, 정확히 0.7이 선택될 확률은 얼마입니까?"},
+      "right": {"en": "0", "ko": "0"},
+      "wrong": [
+        {"en": "1%", "ko": "1%"},
+        {"en": "10%", "ko": "10%"},
+        {"en": "Undefined", "ko": "정의되지 않음"},
+        {"en": "Infinitesimally small but not 0", "ko": "무한소이지만 0은 아님"}
+      ]
+    },
+    {
+      "problem": {"en": "What is the precise meaning of 'probability is 0' in a continuous probability distribution?", "ko": "연속 확률 분포에서 '확률이 0이다'라는 말의 정확한 의미는 무엇입니까?"},
+      "right": {"en": "It can happen, but the calculated probability value (mass) of a single point is 0.", "ko": "일어날 수 있지만, 특정 한 점의 확률값(무게)을 계산하면 0이다."},
+      "wrong": [
+        {"en": "It implies a 50% chance of happening or not.", "ko": "50%의 확률로 일어날 수도 있고 아닐 수도 있다."},
+        {"en": "It is an impossible event that can never happen.", "ko": "절대 일어날 수 없는 불가능한 사건이다."},
+        {"en": "There is insufficient data to calculate probability.", "ko": "확률을 계산하기에는 데이터가 부족하다."},
+        {"en": "It means it can have negative probability.", "ko": "음수의 확률을 가질 수 있다는 뜻이다."}
+      ]
+    },
+    {
+      "problem": {"en": "Which best describes the relationship between 'density' (y-axis height) and actual 'probability' in a PDF graph?", "ko": "확률 밀도 함수(PDF) 그래프의 y축 값(높이)인 '밀도'와 실제 '확률'의 관계를 가장 잘 설명한 것은 무엇입니까?"},
+      "right": {"en": "Probability is the area calculated by multiplying height (density) by width (interval).", "ko": "높이(밀도)에 가로 길이(구간)를 곱한 면적이 확률이다."},
+      "wrong": [
+        {"en": "Height (Density) is exactly Probability.", "ko": "높이(밀도)가 곧 확률이다."},
+        {"en": "There is no mathematical relationship between them.", "ko": "둘은 아무런 수학적 관계가 없다."},
+        {"en": "Probability is height (density) divided by total area.", "ko": "높이(밀도)를 전체 면적으로 나눈 것이 확률이다."},
+        {"en": "Probability is always greater than height (density).", "ko": "확률은 항상 높이(밀도)보다 크다."}
+      ]
+    },
+    {
+      "problem": {"en": "When can Probability Density take a value greater than 1?", "ko": "다음 중 확률 밀도(Probability Density)가 1보다 큰 값을 가질 수 있는 경우는 언제입니까?"},
+      "right": {"en": "When the probability distribution is concentrated in a very narrow interval.", "ko": "확률 분포가 매우 좁은 구간에 집중되어 있을 때."},
+      "wrong": [
+        {"en": "Impossible. Neither probability nor density can exceed 1.", "ko": "절대 불가능하다. 확률과 밀도는 모두 1을 넘을 수 없다."},
+        {"en": "When dealing with impossible events.", "ko": "불가능한 사건을 다룰 때."},
+        {"en": "When the sum of total probabilities exceeds 100%.", "ko": "전체 확률의 합이 100%를 넘을 때."},
+        {"en": "Only possible for discrete random variables.", "ko": "이산 확률 변수일 때만 가능하다."}
+      ]
+    },
+    {
+      "problem": {"en": "In the 'Rod' weight analogy used in the video, what does the weight of a specific 'point' being 0 correspond to?", "ko": "영상에서 사용된 '막대(Rod)'의 무게 비유에서, 특정 '지점'의 무게가 0이라는 것은 무엇과 대응됩니까?"},
+      "right": {"en": "Probability of an exact value", "ko": "특정 정확한 값의 확률"},
+      "wrong": [
+        {"en": "Total probability", "ko": "전체 확률"},
+        {"en": "Probability Density Function", "ko": "확률 밀도 함수"},
+        {"en": "Impossible event", "ko": "불가능한 사건"},
+        {"en": "Mean value", "ko": "평균값"}
+      ]
+    },
+    {
+      "problem": {"en": "Why can we calculate the probability of an interval even though the probability P(x) for a specific value x is 0 in a continuous distribution?", "ko": "연속 확률 분포 그래프에서 특정 값 x에 대한 확률 P(x)가 0임에도 불구하고, 우리가 구간의 확률을 구할 수 있는 이유는 무엇입니까?"},
+      "right": {"en": "Because Density is not 0, and the interval has Width.", "ko": "밀도(Density)는 0이 아니며, 구간에는 너비(Width)가 존재하기 때문이다."},
+      "wrong": [
+        {"en": "Because computers use approximations.", "ko": "컴퓨터가 근사값을 사용하기 때문이다."},
+        {"en": "Because the probability of a point is actually a tiny number, not 0.", "ko": "사실 점의 확률은 0이 아니라 아주 작은 수이기 때문이다."},
+        {"en": "Because interval probability is determined randomly regardless of point probability.", "ko": "구간의 확률은 점의 확률과 무관하게 랜덤으로 정해지기 때문이다."},
+        {"en": "Because adding 0 infinitely results in 1.", "ko": "0을 무한히 더하면 1이 되기 때문이다."}
+      ]
+    },
+    {
+      "problem": {"en": "According to the video, what is the probability of picking a 'Rational number' when choosing a random number between 0 and 1?", "ko": "영상에서 0에서 1 사이의 난수를 고를 때, '유리수(Rational number)'를 고를 확률은 얼마라고 설명합니까?"},
+      "right": {"en": "0", "ko": "0"},
+      "wrong": [
+        {"en": "1", "ko": "1"},
+        {"en": "Infinity", "ko": "무한대"},
+        {"en": "0.5", "ko": "0.5"},
+        {"en": "Unknown", "ko": "알 수 없다"}
+      ]
+    },
+    {
+      "problem": {"en": "Which of the following is NOT a characteristic of a 'Discrete Probability Distribution'?", "ko": "다음 중 '이산 확률 분포(Discrete Probability Distribution)'의 특징이 아닌 것은 무엇입니까?"},
+      "right": {"en": "The probability at a specific single point is always 0.", "ko": "특정 한 점에서의 확률이 항상 0이다."},
+      "wrong": [
+        {"en": "Non-zero probability (mass) is assigned to each event.", "ko": "각 사건에 0이 아닌 확률(질량)이 부여된다."},
+        {"en": "The number of possible outcomes is countable.", "ko": "가능한 결과의 수를 셀 수 있다."},
+        {"en": "Can be represented by a bar graph (Histogram).", "ko": "막대 그래프(Histogram) 등으로 표현할 수 있다."},
+        {"en": "The sum of probabilities is 1.", "ko": "확률의 총합은 1이다."}
+      ]
+    },
+    {
+      "problem": {"en": "What is the fundamental reason why the total area under a PDF curve must always be 1?", "ko": "확률 밀도 함수(PDF) 그래프 아래의 전체 면적이 항상 1이어야 하는 근본적인 이유는 무엇입니까?"},
+      "right": {"en": "Because the probability that some outcome will occur is 100%.", "ko": "어떤 결과든 결과가 나올 확률은 100%이기 때문이다."},
+      "wrong": [
+        {"en": "적분 상수가 1이기 때문이다.", "ko": "Because the integration constant is 1."},
+        {"en": "가장 높은 밀도 값이 1이기 때문이다.", "ko": "Because the highest density value is 1."},
+        {"en": "계산의 편의를 위해서이다.", "ko": "For computational convenience."},
+        {"en": "x축의 범위가 항상 0에서 1까지이기 때문이다.", "ko": "Because the x-axis range is always 0 to 1."}
+      ]
+    },
+    {
+      "problem": {"en": "According to the conclusion of the 3Blue1Brown video, how is the relationship between the mathematical model (continuous probability) and the real world (measurement) explained?", "ko": "3Blue1Brown 영상의 결론에 따르면, 수학적 모델(연속 확률)과 현실 세계(측정) 사이의 관계는 어떻게 설명됩니까?"},
+      "right": {"en": "Real-world measurements always include a margin of error, so we deal with intervals (positive probability) rather than points (0 probability).", "ko": "현실의 측정은 항상 오차 범위를 포함하므로, 우리는 점(0 확률)이 아니라 구간(양의 확률)을 다루게 된다."},
+      "wrong": [
+        {"en": "All probabilities in the real world are continuous, not discrete.", "ko": "현실 세계의 모든 확률은 이산적이지 않고 연속적이다."},
+        {"en": "Probability 0 events never happen in reality.", "ko": "확률 0인 사건은 현실에서 절대 일어나지 않는다."},
+        {"en": "The real world is perfectly continuous, so it matches the model.", "ko": "현실 세계도 완벽하게 연속적이므로 모델과 일치한다."},
+        {"en": "The mathematical model is wrong, and the real world is correct.", "ko": "수학적 모델은 틀렸고 현실 세계가 정답이다."}
+      ]
+    }
+  ]
+}
