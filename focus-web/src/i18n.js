@@ -40,7 +40,12 @@ const translations = {
     modeNormalDesc: 'Standard video player with controls',
     modeNoControlDesc: 'Cannot pause or control playback',
     modeScoreOnlyDesc: 'Only displays focus score',
-    modeStrictDesc: 'Auto-pause on unfocus, volume control'
+    modeStrictDesc: 'Auto-pause on unfocus, volume control',
+    subtitles: 'Subtitles',
+    subtitleOff: 'Off',
+    subtitleKorean: '한국어',
+    heroDescription: 'Learn with AI-powered focus monitoring',
+    attribution: 'Demo videos from'
   },
   ko: {
     appName: 'FOCUS',
@@ -83,7 +88,12 @@ const translations = {
     modeNormalDesc: '일반적인 영상 플레이어',
     modeNoControlDesc: '재생/일시정지 조작 불가',
     modeScoreOnlyDesc: '집중 점수만 표시',
-    modeStrictDesc: '집중 안 하면 일시정지, 볼륨 조절'
+    modeStrictDesc: '집중 안 하면 일시정지, 볼륨 조절',
+    subtitles: '자막',
+    subtitleOff: '끄기',
+    subtitleKorean: '한국어',
+    heroDescription: 'AI 기반 집중도 모니터링과 함께 학습하세요',
+    attribution: '데모 영상 출처:'
   }
 };
 

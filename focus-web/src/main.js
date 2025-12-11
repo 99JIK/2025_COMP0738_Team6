@@ -34,6 +34,15 @@ class FocusApp {
     this.langIcon = document.getElementById('lang-icon');
     this.debugToggle = document.getElementById('debug-toggle');
 
+    // Subtitle elements
+    this.subtitleToggle = document.getElementById('subtitle-toggle');
+    this.subtitleMenu = document.getElementById('subtitle-menu');
+    this.customSubtitle = document.getElementById('custom-subtitle');
+    this.subtitleText = this.customSubtitle.querySelector('.subtitle-text');
+    this.subtitleCues = [];
+    this.subtitleEnabled = false;
+    this.currentSubtitleLang = 'off';
+
     this.videos = [];
     this.currentVideoName = null;
     this.quizData = null;
@@ -78,6 +87,18 @@ class FocusApp {
       this.playVideoBtn.addEventListener('click', () => this.startVideoPlayback());
 
       this.learningVideo.addEventListener('ended', () => this.onVideoEnded());
+      this.learningVideo.addEventListener('timeupdate', () => this.updateSubtitle());
+
+      // Subtitle controls
+      this.subtitleToggle.addEventListener('click', () => this.toggleSubtitleMenu());
+      this.subtitleMenu.querySelectorAll('.subtitle-option').forEach(btn => {
+        btn.addEventListener('click', () => this.selectSubtitleLang(btn.dataset.lang));
+      });
+      document.addEventListener('click', (e) => {
+        if (!this.subtitleToggle.contains(e.target) && !this.subtitleMenu.contains(e.target)) {
+          this.subtitleMenu.classList.add('hidden');
+        }
+      });
 
       this.modeModal.querySelectorAll('.mode-btn').forEach(btn => {
         btn.addEventListener('click', () => this.selectMode(btn.dataset.mode));
@@ -152,20 +173,35 @@ class FocusApp {
       return;
     }
 
+    const videoIcons = ['&#120587;', '&#8734;', '&#9651;']; // π, ∞, △
+
     this.videoList.innerHTML = this.videos.map((videoName, index) => `
-      <div class="video-item" data-index="${index}">
-        <div class="video-thumbnail">&#9658;</div>
-        <div class="video-info">
-          <div class="video-name">${videoName}</div>
+      <div class="video-card" data-index="${index}">
+        <div class="video-card-thumbnail">
+          <span class="video-card-icon">${videoIcons[index % videoIcons.length]}</span>
+          <div class="video-card-overlay">
+            <button class="watch-btn" data-index="${index}">
+              <span class="play-icon">&#9658;</span>
+              ${i18n.t('watch')}
+            </button>
+          </div>
         </div>
-        <div class="video-actions">
-          <button class="watch-btn" data-index="${index}">${i18n.t('watch')}</button>
+        <div class="video-card-content">
+          <h3 class="video-card-title">${videoName}</h3>
+          <span class="video-card-source">3Blue1Brown</span>
         </div>
       </div>
     `).join('');
 
     this.videoList.querySelectorAll('.watch-btn').forEach(btn => {
-      btn.addEventListener('click', () => this.watchVideo(parseInt(btn.dataset.index)));
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.watchVideo(parseInt(btn.dataset.index));
+      });
+    });
+
+    this.videoList.querySelectorAll('.video-card').forEach(card => {
+      card.addEventListener('click', () => this.watchVideo(parseInt(card.dataset.index)));
     });
   }
 
@@ -187,6 +223,9 @@ class FocusApp {
     this.volumeBoosted = false;
     this.baseVolume = 1.0;
     this.learningVideo.volume = this.baseVolume;
+
+    // Load subtitles
+    this.loadSubtitles(videoName);
 
     this.applyModeSettings();
     this.showWatchPage();
@@ -432,6 +471,13 @@ class FocusApp {
     this.playVideoBtn.classList.add('hidden');
     document.getElementById('side-panel').classList.remove('hidden');
 
+    // Reset subtitle state
+    this.subtitleCues = [];
+    this.hideSubtitle();
+    this.subtitleEnabled = false;
+    this.currentSubtitleLang = 'off';
+    this.subtitleToggle.classList.remove('active');
+
     this.currentVideoName = null;
     this.quizData = null;
     this.isVideoPlaying = false;
@@ -460,8 +506,15 @@ class FocusApp {
     this.langIcon.textContent = i18n.getLang() === 'ko' ? 'EN' : 'KO';
 
     document.getElementById('list-title').textContent = i18n.t('videoList');
+    document.getElementById('hero-description').textContent = i18n.t('heroDescription');
     document.getElementById('unfocus-message').textContent = i18n.t('focusPlease');
     this.playVideoBtn.textContent = i18n.t('playVideo');
+
+    // Update attribution text
+    const attributionEl = document.getElementById('attribution-text');
+    if (attributionEl) {
+      attributionEl.innerHTML = `<span class="attribution-icon">&#127909;</span> ${i18n.t('attribution')} <a href="https://www.youtube.com/@3blue1brown" target="_blank" rel="noopener">3Blue1Brown</a>`;
+    }
 
     if (!this.isRunning) {
       this.statusElement.textContent = i18n.t('ready');
@@ -854,6 +907,134 @@ class FocusApp {
     this.canvasCtx.arc(x, y, 5, 0, 2 * Math.PI);
     this.canvasCtx.fillStyle = color;
     this.canvasCtx.fill();
+  }
+
+  // Subtitle methods
+  async loadSubtitles(videoName) {
+    this.subtitleCues = [];
+    this.hideSubtitle();
+
+    try {
+      const response = await fetch(`/videos/${encodeURIComponent(videoName)}/subtitle.ttml`);
+      if (!response.ok) {
+        console.log('No subtitle file found for this video');
+        this.subtitleToggle.classList.add('hidden');
+        return;
+      }
+
+      const ttmlText = await response.text();
+      this.subtitleCues = this.parseTTML(ttmlText);
+      this.subtitleToggle.classList.remove('hidden');
+
+      // Auto-enable subtitles
+      if (this.subtitleCues.length > 0) {
+        this.selectSubtitleLang('ko');
+      }
+    } catch (error) {
+      console.error('Failed to load subtitles:', error);
+      this.subtitleToggle.classList.add('hidden');
+    }
+  }
+
+  parseTTML(ttmlText) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(ttmlText, 'text/xml');
+    const cues = [];
+
+    const paragraphs = doc.querySelectorAll('p');
+    paragraphs.forEach(p => {
+      const begin = this.parseTime(p.getAttribute('begin'));
+      const end = this.parseTime(p.getAttribute('end'));
+      // Get innerHTML and convert <br> to newlines, then strip other tags
+      let text = p.innerHTML
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<[^>]*>/g, '')
+        .replace(/&#39;/g, "'")
+        .replace(/&quot;/g, '"')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .trim();
+
+      if (begin !== null && end !== null && text) {
+        cues.push({ begin, end, text });
+      }
+    });
+
+    return cues;
+  }
+
+  parseTime(timeStr) {
+    if (!timeStr) return null;
+
+    // Format: HH:MM:SS.mmm or MM:SS.mmm
+    const parts = timeStr.split(':');
+    if (parts.length === 3) {
+      const hours = parseInt(parts[0], 10);
+      const minutes = parseInt(parts[1], 10);
+      const seconds = parseFloat(parts[2]);
+      return hours * 3600 + minutes * 60 + seconds;
+    } else if (parts.length === 2) {
+      const minutes = parseInt(parts[0], 10);
+      const seconds = parseFloat(parts[1]);
+      return minutes * 60 + seconds;
+    }
+    return null;
+  }
+
+  toggleSubtitleMenu() {
+    this.subtitleMenu.classList.toggle('hidden');
+  }
+
+  selectSubtitleLang(lang) {
+    this.currentSubtitleLang = lang;
+    this.subtitleEnabled = lang !== 'off';
+
+    // Update menu UI
+    this.subtitleMenu.querySelectorAll('.subtitle-option').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+
+    // Update toggle button
+    this.subtitleToggle.classList.toggle('active', this.subtitleEnabled);
+
+    // Hide menu
+    this.subtitleMenu.classList.add('hidden');
+
+    // Update subtitle display
+    if (!this.subtitleEnabled) {
+      this.hideSubtitle();
+    } else {
+      this.updateSubtitle();
+    }
+  }
+
+  updateSubtitle() {
+    if (!this.subtitleEnabled || this.subtitleCues.length === 0) {
+      this.hideSubtitle();
+      return;
+    }
+
+    const currentTime = this.learningVideo.currentTime;
+    const activeCue = this.subtitleCues.find(
+      cue => currentTime >= cue.begin && currentTime <= cue.end
+    );
+
+    if (activeCue) {
+      this.showSubtitle(activeCue.text);
+    } else {
+      this.hideSubtitle();
+    }
+  }
+
+  showSubtitle(text) {
+    this.subtitleText.innerHTML = text.replace(/\n/g, '<br>');
+    this.customSubtitle.classList.remove('hidden');
+  }
+
+  hideSubtitle() {
+    this.customSubtitle.classList.add('hidden');
+    this.subtitleText.textContent = '';
   }
 
   toggleDebug() {

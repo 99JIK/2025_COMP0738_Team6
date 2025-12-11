@@ -1,0 +1,104 @@
+{
+  "problems": [
+    {
+      "problem": {"en": "What implies the 'simplified version' first examined in the video to solve the 3D sphere problem?", "ko": "영상에서 3차원 구(Sphere) 문제를 해결하기 위해 가장 먼저 살펴본 '단순화된 형태(Simplified version)'는 무엇입니까?"},
+      "right": {"en": "3 points on a 2D circle", "ko": "2차원 원 위의 3개 점"},
+      "wrong": [
+        {"en": "5 points on a 4D hypersphere", "ko": "4차원 초구 위의 5개 점"},
+        {"en": "Points on an ellipse", "ko": "타원 위의 점들"},
+        {"en": "Points inside a cube", "ko": "정육면체 안의 점들"},
+        {"en": "2 points on a 1D line", "ko": "1차원 직선 위의 2개 점"}
+      ]
+    },
+    {
+      "problem": {"en": "What is the probability that a tetrahedron formed by 4 random points on a 3D sphere contains the center?", "ko": "3차원 구 위에서 4개의 점을 무작위로 선택했을 때, 이들이 만드는 사면체가 중심을 포함할 확률은 얼마입니까?"},
+      "right": {"en": "1/8", "ko": "1/8"},
+      "wrong": [
+        {"en": "1/2", "ko": "1/2"},
+        {"en": "1/3", "ko": "1/3"},
+        {"en": "1/4", "ko": "1/4"},
+        {"en": "1/16", "ko": "1/16"}
+      ]
+    },
+    {
+      "problem": {"en": "What is the geometric necessary and sufficient condition for a polygon or polyhedron NOT to contain the origin (center)?", "ko": "다각형이나 다면체가 원점(중심)을 포함하지 않기 위한 기하학적 필요충분조건은 무엇입니까?"},
+      "right": {"en": "All points lie within a single hemisphere defined by a plane through the center.", "ko": "모든 점이 중심을 지나는 어떤 하나의 반구(Hemisphere) 안에 다 들어있다."},
+      "wrong": [
+        {"en": "The distances between points are all smaller than the radius.", "ko": "점들 간의 거리가 모두 반지름보다 작다."},
+        {"en": "Points are all in the first quadrant.", "ko": "점들이 모두 1사분면에 있다."},
+        {"en": "The number of points is odd.", "ko": "점들의 개수가 홀수이다."},
+        {"en": "The longest side is longer than the diameter.", "ko": "가장 긴 변이 지름보다 길다."}
+      ]
+    },
+    {
+      "problem": {"en": "What auxiliary tool did the video introduce instead of 'Points' to solve the problem easily?", "ko": "문제를 쉽게 풀기 위해 영상에서 '점(Point)' 대신 도입한 보조 수단은 무엇입니까?"},
+      "right": {"en": "Lines through the cente", "ko": "중심을 지나는 직선"},
+      "wrong": [
+        {"en": "Tangent lines", "ko": "접선"},
+        {"en": "Centroid vectors", "ko": "무게중심 벡터"},
+        {"en": "Inscribed cube", "ko": "내접하는 정육면체"},
+        {"en": "Latitude and Longitude", "ko": "위도와 경도"}
+      ]
+    },
+    {
+      "problem": {"en": "Given 4 lines, how many total combinations of points can be formed by picking one endpoint from each line?", "ko": "4개의 직선(Lines)이 주어졌을 때, 각 직선에서 끝점을 하나씩 선택하여 만들 수 있는 점들의 조합은 총 몇 가지입니까?"},
+      "right": {"en": "16", "ko": "16"},
+      "wrong": [
+        {"en": "4", "ko": "4"},
+        {"en": "8", "ko": "8"},
+        {"en": "24", "ko": "24"},
+        {"en": "32", "ko": "32"}
+      ]
+    },
+    {
+      "problem": {"en": "Given any n lines (in general position), exactly how many combinations of their endpoints contain the center?", "ko": "임의의 n개의 직선이 주어졌을 때, 그 직선들의 끝점 조합 중 중심을 포함하는 경우는 항상 몇 가지입니까? (단, 일반적인 위치에 있을 때)"},
+      "right": {"en": "Always 2 cases", "ko": "항상 2가지"},
+      "wrong": [
+        {"en": "Half of all cases", "ko": "전체 경우의 절반"},
+        {"en": "n cases", "ko": "n cases"},
+        {"en": "2n cases", "ko": "2n가지"},
+        {"en": "Always 1 case", "ko": "항상 1가지"}
+      ]
+    },
+    {
+      "problem": {"en": "What is the probability that a triangle formed by 3 random points on a 2D plane (circle) contains the center?", "ko": "2차원 평면(원) 위에서 3개의 점을 무작위로 선택할 때, 삼각형이 중심을 포함할 확률은 얼마입니까?"},
+      "right": {"en": "1/4", "ko": "1/4"},
+      "wrong": [
+        {"en": "1/5", "ko": "1/5"},
+        {"en": "1/2", "ko": "1/2"},
+        {"en": "1/6", "ko": "1/6"},
+        {"en": "1/3", "ko": "1/3"}
+      ]
+    },
+    {
+      "problem": {"en": "When choosing 2 random points on a 1D line (relative to center), what is the probability that the center lies between the two points?", "ko": "1차원 직선(Line) 위에서 2개의 점을 무작위로 선택할 때(중심 기준), 두 점 사이에 중심이 있을 확률은 얼마입니까?"},
+      "right": {"en": "1/2", "ko": "1/2"},
+      "wrong": [
+        {"en": "0", "ko": "0"},
+        {"en": "1/4", "ko": "1/4"},
+        {"en": "1/8", "ko": "1/8"},
+        {"en": "1", "ko": "1"}
+      ]
+    },
+    {
+      "problem": {"en": "What is the generalized formula for the probability of containing the center when choosing n+1 points on an n-dimensional sphere?", "ko": "n차원 구면에서 n+1개의 점을 선택할 때, 중심을 포함할 확률을 나타내는 일반화된 공식은 무엇입니까?"},
+      "right": {"en": "1/(2^n)", "ko": "1/(2^n)"},
+      "wrong": [
+        {"en": "1/(n^2)", "ko": "1/(n^2)"},
+        {"en": "1/n", "ko": "1/n"},
+        {"en": "1/(n!)", "ko": "1/(n!)"},
+        {"en": "n/(n+1)", "ko": "n/(n+1)"}
+      ]
+    },
+    {
+      "problem": {"en": "What lesson does the core solution strategy of this problem teach us about 'when facing a hard problem'?", "ko": "이 문제의 핵심 풀이 전략은 '어려운 문제를 만났을 때' 어떻게 하라는 교훈을 줍니까?"},
+      "right": {"en": "Reduce the problem to simpler dimensions or cases.", "ko": "더 간단한 차원이나 사례로 문제를 축소해본다."},
+      "wrong": [
+        {"en": "Write a computer program.", "ko": "컴퓨터 프로그램을 작성한다."},
+        {"en": "Solve by memorizing formulas.", "ko": "공식을 외워서 푼다."},
+        {"en": "Give up and solve other problems.", "ko": "문제를 포기하고 다른 문제를 푼다."},
+        {"en": "Think about the most complex case first.", "ko": "가장 복잡한 경우부터 생각한다."}
+      ]
+    }
+  ]
+}

@@ -32,10 +32,23 @@
     </header>
 
     <main id="list-page">
-      <div class="page-title">
-        <h2 id="list-title">영상 목록</h2>
+      <div class="hero-section">
+        <div class="hero-content">
+          <h2 id="list-title">영상 목록</h2>
+          <p id="hero-description" class="hero-description">
+            AI 기반 집중도 모니터링과 함께 학습하세요
+          </p>
+        </div>
       </div>
-      <div id="video-list"></div>
+
+      <div class="video-grid" id="video-list"></div>
+
+      <div class="attribution">
+        <p id="attribution-text">
+          <span class="attribution-icon">&#127909;</span>
+          Demo videos from <a href="https://www.youtube.com/@3blue1brown" target="_blank" rel="noopener">3Blue1Brown</a>
+        </p>
+      </div>
     </main>
 
     <div id="mode-modal" class="modal hidden">
@@ -67,6 +80,18 @@
         <video id="learning-video" controls>
           <source src="" type="video/mp4">
         </video>
+        <div id="custom-subtitle" class="hidden">
+          <span class="subtitle-text"></span>
+        </div>
+        <div id="subtitle-controls">
+          <button id="subtitle-toggle" class="subtitle-btn" title="Subtitles">
+            <span class="subtitle-icon">CC</span>
+          </button>
+          <div id="subtitle-menu" class="hidden">
+            <button class="subtitle-option" data-lang="off">Off</button>
+            <button class="subtitle-option" data-lang="ko">한국어</button>
+          </div>
+        </div>
         <div id="video-placeholder">
           <button id="play-video-btn" class="primary-btn hidden">영상 시청</button>
         </div>

@@ -1,7 +1,7 @@
 {
   "problems": [
     {
-      "problem": {"en": "What does the Binomial Distribution represent", "ko": "이항 분포는 무엇을 나타냅니까?"},
+      "problem": {"en": "What does the Binomial Distribution represent?", "ko": "이항 분포는 무엇을 나타냅니까?"},
       "right": {"en": "Probability of k successes in n independent trials", "ko": "n번 독립 시행에서 k번 성공할 확률"},
       "wrong": [
         {"en": "Probability of success in a single trial", "ko": "한 번의 시행에서 성공할 확률"},
