@@ -1,0 +1,104 @@
+{
+  "problems": [
+    {
+      "problem": {"en": "What are the two definitions of an ellipse presented in the video?", "ko": "영상에서 타원(Ellipse)을 정의하는 두 가지 방법으로 제시된 것은 무엇입니까?"},
+      "right": {"en": "Conic section & Locus of points with constant sum of distances to two foci", "ko": "원뿔 단면 & 두 초점까지의 거리의 합이 일정한 점들의 집합"},
+      "wrong": [
+        {"en": "Curve passing through three points & Section parallel to the cone's base", "ko": "세 점을 지나는 곡선 & 원뿔의 밑면과 평행한 단면"},
+        {"en": "Locus of points with constant difference of distances & Cylinder section", "ko": "두 초점까지의 거리의 차가 일정한 점들의 집합 & 원기둥 단면"},
+        {"en": "Conic section & Locus of points equidistant from a point and a line", "ko": "원뿔 단면 & 한 점과 직선까지의 거리가 같은 점들의 집합"},
+        {"en": "Locus of points equidistant from a center & Intersection of two lines", "ko": "중심에서 일정한 거리에 있는 점들의 집합 & 두 직선의 교차점"}
+      ]
+    },
+    {
+      "problem": {"en": "How are the Dandelin spheres positioned inside the cone?", "ko": "단들랭 구(Dandelin Spheres)는 원뿔 내부에서 어떻게 위치하고 있습니까?"},
+      "right": {"en": "Tangent to both the cone and the plane, with one above and one below the plane.", "ko": "원뿔과 자르는 평면 모두에 접하며, 평면을 기준으로 하나는 위에, 하나는 아래에 위치한다."},
+      "wrong": [
+        {"ko": "원뿔 바깥쪽에 위치하여 평면과 접한다.", "en": "Located outside the cone touching the plane."},
+        {"en": "Tangent only to the cone and do not touch the plane.", "ko": "원뿔에만 접하고 평면과는 만나지 않는다."},
+        {"en": "Located side-by-side on the same side of the plane.", "ko": "평면의 같은 쪽에 나란히 위치한다."},
+        {"en": "Located at the vertex and the center of the base of the cone respectively.", "ko": "원뿔의 꼭짓점과 밑면 중심에 각각 위치한다."}
+      ]
+    },
+    {
+      "problem": {"en": "What do the two points where the Dandelin spheres touch the slicing plane represent in the ellipse?", "ko": "단들랭 구가 자르는 평면(slicing plane)과 접하는 두 점은 타원에서 무엇을 의미합니까?"},
+      "right": {"en": "The two foci of the ellipse", "ko": "타원의 두 초점"},
+      "wrong": [
+        {"en": "The center of the ellipse", "ko": "타원의 중심"},
+        {"en": "Intersection of major and minor axes", "ko": "장축과 단축의 교차점"},
+        {"en": "No geometric significance", "ko": "아무런 기하학적 의미가 없다"},
+        {"en": "The vertices of the ellipse", "ko": "타원의 꼭짓점"}
+      ]
+    },
+    {
+      "problem": {"en": "Geometrically, what is the distance from a random point P on the ellipse to the focus F_1 equal to?", "ko": "타원 위의 임의의 점 P에서 초점 F_1까지의 거리(PF_1)는 기하학적으로 무엇과 같습니까?"},
+      "right": {"en": "Distance along the generator from P to the contact circle where the sphere touches the cone", "ko": "점 P에서 해당 구가 원뿔과 접하는 원(contact circle)까지의 모선 거리"},
+      "wrong": [
+        {"en": "Radius of the Dandelin sphere", "ko": "단들랭 구의 반지름"},
+        {"en": "Half the distance between the two foci", "ko": "두 초점 사이의 거리의 절반"},
+        {"en": "Distance from P to the vertex of the cone", "ko": "점 P에서 원뿔의 꼭짓점까지의 거리"},
+        {"en": "Vertical distance from $P$ to the cone's base", "ko": "점 P에서 원뿔의 밑면까지의 수직 거리"}
+      ]
+    },
+    {
+      "problem": {"en": "What represents the key geometric theorem used in this proof?", "ko": "이 증명에서 가장 핵심적으로 사용되는 기하학적 정리는 무엇입니까?"},
+      "right": {"en": "Two tangent segments drawn from an external point to a sphere are equal in length", "ko": "한 점(외부)에서 구에 그은 두 접선의 길이는 같다"},
+      "wrong": [
+        {"en": "Pythagorean theorem", "ko": "피타고라스 정리"},
+        {"en": "Sum of angles in a triangle is 180 degrees", "ko": "삼각형의 내각의 합은 180도이다"},
+        {"en": "Inscribed angle is half of the central angle", "ko": "원주각은 중심각의 절반이다."},
+        {"en": "Volume of sphere formula", "ko": "구의 부피는 겉넓이의 1/3 반경을 곱한 것이다."}
+      ]
+    },
+    {
+      "problem": {"en": "What does the sum of the two distances (PF_1 + PF_2), which is the definition of an ellipse, ultimately appear as a constant in this proof?", "ko": "타원의 정의인 '두 거리의 합(PF_1 + PF_2)'은 이 증명에서 결국 무엇으로 일정하게 나타납니까?"},
+      "right": {"en": "The slant distance between the two circles where the Dandelin spheres touch the cone", "ko": "두 단들랭 구가 원뿔과 접하는 두 원 사이의 모선 길이"},
+      "wrong": [
+        {"en": "Half the length of the major axis of the ellipse", "ko": "타원의 장축 길이의 절반"},
+        {"en": "Height of the cone", "ko": "원뿔의 높이"},
+        {"en": "Distance between the centers of the two Dandelin spheres", "ko": "두 단들랭 구의 중심 사이의 거리"},
+        {"en": "Diameter of the cone's base", "ko": "원뿔의 밑면 지름"}
+      ]
+    },
+    {
+      "problem": {"en": "What shapes do the Dandelin spheres form where they touch the cone itself?", "ko": "단들랭 구들이 원뿔 자체와 접하면서 만드는 도형은 무엇입니까?"},
+      "right": {"en": "Two circles perpendicular to the cone's axis", "ko": "원뿔 축에 수직인 두 개의 원"},
+      "wrong": [
+        {"en": "Two intersecting lines", "ko": "서로 교차하는 두 직선"},
+        {"en": "Two parabolas", "ko": "두 개의 포물선"},
+        {"en": "Two ellipses", "ko": "두 개의 타원"},
+        {"en": "Two points", "ko": "두 개의 점"}
+      ]
+    },
+    {
+      "problem": {"en": "What is the relationship between the line connecting a point P on the ellipse to the cone's vertex (generator) and the Dandelin spheres?", "ko": "타원 위의 점 P에서 원뿔의 꼭짓점을 연결한 직선(모선)은 단들랭 구와 어떤 관계가 있습니까?"},
+      "right": {"en": "Tangent to both spheres.", "ko": "두 구 모두에 접한다."},
+      "wrong": [
+        {"en": "Does not touch any sphere.", "ko": "아무런 구와도 만나지 않는다."},
+        {"en": "Passes through the centers of both spheres.", "ko": "두 구의 중심을 지난다."},
+        {"en": "Passes through both spheres.", "ko": "두 구를 관통한다."},
+        {"en": "Tangent to the large sphere but passes through the small one.", "ko": "큰 구에는 접하고 작은 구는 관통한다."}
+      ]
+    },
+    {
+      "problem": {"en": "What is the main reason this proof is described as 'beautiful'?", "ko": "이 증명이 '아름답다(Beautiful)'고 표현되는 주된 이유는 무엇입니까?"},
+      "right": {"en": "Because it proves it using only 3D geometric intuition without complex algebraic calculations", "ko": "복잡한 대수적 계산 없이 3차원 기하학적 직관만으로 증명해내기 때문에"},
+      "wrong": [
+        {"ko": "가장 짧은 증명이라서", "en": "Because it is the shortest proof"},
+        {"ko": "컴퓨터만이 풀 수 있는 문제라서", "en": "Because only computers can solve it"},
+        {"ko": "4차원 공간을 사용하기 때문에", "en": "Because it uses 4D space"},
+        {"ko": "모든 원뿔 곡선에 대해 하나의 공식만 사용해서", "en": "Because it uses only one formula for all conic sections"}
+      ]
+    },
+    {
+      "problem": {"en": "According to the video, what does 'eccentricity' describe for an ellipse, and what is its range?", "ko": "영상에 따르면, 타원의 '이심률(Eccentricity)'은 무엇을 나타내며, 그 범위는 어떻게 됩니까?"},
+      "right": {"en": "It describes how 'squished' the ellipse is, ranging from 0 (circle) to approaching 1 (very elongated).", "ko": "타원이 얼마나 '찌그러졌는지'를 나타내며, 0(원)에서 1에 가까워질수록(매우 납작함) 범위를 갖는다."},
+      "wrong": [
+        {"en": "It describes the size of the ellipse, ranging from 0 to infinity.", "ko": "타원의 크기를 나타내며, 0에서 무한대까지의 범위를 갖는다."},
+        {"en": "It describes the angle of the slicing plane, ranging from 0 to 90 degrees.", "ko": "자르는 평면의 각도를 나타내며, 0도에서 90도까지의 범위를 갖는다."},
+        {"en": "It describes the distance between foci, ranging from 1 to 10.", "ko": "초점 사이의 거리를 나타내며, 1에서 10까지의 범위를 갖는다."},
+        {"en": "It describes the area of the ellipse, ranging from 0 to 1.", "ko": "타원의 넓이를 나타내며, 0에서 1까지의 범위를 갖는다."}
+      ]
+    }
+  ]
+}

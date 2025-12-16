@@ -84,10 +84,10 @@
       "problem": {"en": "What is the fundamental reason why the total area under a PDF curve must always be 1?", "ko": "확률 밀도 함수(PDF) 그래프 아래의 전체 면적이 항상 1이어야 하는 근본적인 이유는 무엇입니까?"},
       "right": {"en": "Because the probability that some outcome will occur is 100%.", "ko": "어떤 결과든 결과가 나올 확률은 100%이기 때문이다."},
       "wrong": [
-        {"en": "적분 상수가 1이기 때문이다.", "ko": "Because the integration constant is 1."},
-        {"en": "가장 높은 밀도 값이 1이기 때문이다.", "ko": "Because the highest density value is 1."},
-        {"en": "계산의 편의를 위해서이다.", "ko": "For computational convenience."},
-        {"en": "x축의 범위가 항상 0에서 1까지이기 때문이다.", "ko": "Because the x-axis range is always 0 to 1."}
+        {"ko": "적분 상수가 1이기 때문이다.", "en": "Because the integration constant is 1."},
+        {"ko": "가장 높은 밀도 값이 1이기 때문이다.", "en": "Because the highest density value is 1."},
+        {"ko": "계산의 편의를 위해서이다.", "en": "For computational convenience."},
+        {"ko": "x축의 범위가 항상 0에서 1까지이기 때문이다.", "en": "Because the x-axis range is always 0 to 1."}
       ]
     },
     {

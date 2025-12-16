@@ -1,0 +1,284 @@
+{
+  "problems": [
+    {
+      "problem": {
+        "en": "Mathematically, why is it impossible to tune a piano to have *both* perfect octaves (2:1) and perfect fifths (3:2) in all keys?",
+        "ko": "수학적으로, 왜 피아노를 모든 조성에서 '완벽한 옥타브(2:1)'와 '완벽한 5도(3:2)'를 동시에 갖도록 조율하는 것이 불가능합니까?"
+      },
+      "right": {
+        "en": "Because powers of 3 can never equal powers of 2.",
+        "ko": "3의 거듭제곱과 2의 거듭제곱은 결코 같을 수 없기 때문이다."
+      },
+      "wrong": [
+        {
+          "en": "Because the tension of piano strings changes over time.",
+          "ko": "피아노 현의 장력이 시간이 지나면 변하기 때문이다."
+        },
+        {
+          "en": "Because the human ear cannot distinguish perfect ratios.",
+          "ko": "인간의 귀가 완벽한 비율을 구분할 수 없기 때문이다."
+        },
+        {
+          "en": "Because the number 12 is not large enough.",
+          "ko": "12라는 숫자가 충분히 크지 않기 때문이다."
+        },
+        {
+          "en": "Because frequency cannot be negative.",
+          "ko": "주파수는 음수가 될 수 없기 때문이다."
+        }
+      ]
+    },
+    {
+      "problem": {
+        "en": "What is the slight frequency discrepancy called that occurs when stacking 12 perfect fifths versus 7 octaves?",
+        "ko": "12개의 완전 5도(Perfect Fifths)를 쌓아 올렸을 때와 7개의 옥타브(Octaves)를 쌓았을 때 발생하는 미세한 주파수 차이를 무엇이라고 합니까?"
+      },
+      "right": {
+        "en": "Pythagorean Comma",
+        "ko": "피타고라스 콤마 (Pythagorean Comma)"
+      },
+      "wrong": [
+        {
+          "en": "Golden Ratio",
+          "ko": "황금비 (Golden Ratio)"
+        },
+        {
+          "en": "Euler's Constant",
+          "ko": "오일러 상수 (Euler's Constant)"
+        },
+        {
+          "en": "Cent",
+          "ko": "센트 (Cent)"
+        },
+        {
+          "en": "Doppler Effect",
+          "ko": "도플러 효과 (Doppler Effect)"
+        }
+      ]
+    },
+    {
+      "problem": {
+        "en": "The set of Rational numbers is 'dense' on the number line. Why is its 'measure' still 0?",
+        "ko": "유리수의 집합은 수직선 위 어디에나 존재(Dense)합니다. 그럼에도 불구하고 측도(Measure)가 0인 이유는 무엇입니까?"
+      },
+      "right": {
+        "en": "Density is about position, while Measure is about size (length).",
+        "ko": "조밀성(Density)은 위치에 관한 것이고, 측도(Measure)는 크기(길이)에 관한 것이기 때문이다."
+      },
+      "wrong": [
+        {
+          "en": "Because there are only a finite number of rationals.",
+          "ko": "유리수는 유한한 개수만 존재하기 때문이다."
+        },
+        {
+          "en": "Because the distance between rationals is too large.",
+          "ko": "유리수 사이의 거리가 너무 멀기 때문이다."
+        },
+        {
+          "en": "Because measure is only defined between 0 and 1.",
+          "ko": "측도는 0과 1 사이에서만 정의되기 때문이다."
+        },
+        {
+          "en": "Because rational numbers cannot be expressed as fractions.",
+          "ko": "유리수는 분수로 표현될 수 없기 때문이다."
+        }
+      ]
+    },
+    {
+      "problem": {
+        "en": "In measure theory, what term describes a property that holds true everywhere *except* for a set of measure 0?",
+        "ko": "측도론에서, '측도가 0인 집합'을 제외한 모든 곳에서 성립하는 성질을 가리키는 용어는 무엇입니까?"
+      },
+      "right": {
+        "en": "Almost Everywhere (a.e.)",
+        "ko": "거의 어디서나 (Almost Everywhere / a.e.)"
+      },
+      "wrong": [
+        {
+          "en": "Mostly",
+          "ko": "대부분 (Mostly)"
+        },
+        {
+          "en": "Always",
+          "ko": "항상 (Always)"
+        },
+        {
+          "en": "Probabilistically",
+          "ko": "확률적으로 (Probabilistically)"
+        },
+        {
+          "en": "Continuously",
+          "ko": "연속적으로 (Continuously)"
+        }
+      ]
+    },
+    {
+      "problem": {
+        "en": "In the proof that the measure of rationals is 0, we cover the k-th rational with an interval of length epsilon / 2^k. What is the sum of this infinite series?",
+        "ko": "유리수의 측도가 0임을 증명할 때, k번째 유리수를 덮는 구간의 길이를 ε/2^k로 설정합니다. 이 무한급수의 합(∑)은 무엇입니까?"
+      },
+      "right": {
+        "en": "epsilon",
+        "ko": "ε (입실론)"
+      },
+      "wrong": [
+        {
+          "en": "1",
+          "ko": "1"
+        },
+        {
+          "en": "Infinity",
+          "ko": "∞ (무한대)"
+        },
+        {
+          "en": "0",
+          "ko": "0"
+        },
+        {
+          "en": "Pi",
+          "ko": "π (파이)"
+        }
+      ]
+    },
+    {
+      "problem": {
+        "en": "Since rationals are countable and have measure 0, what does this imply about irrational numbers on the interval [0,1]?",
+        "ko": "유리수가 가산(셀 수 있음)이고 측도가 0이므로, 이것은 구간 [0,1]의 무리수에 대해 무엇을 의미합니까?"
+      },
+      "right": {
+        "en": "Irrational numbers have measure 1 and make up 'almost all' of the interval.",
+        "ko": "무리수의 측도는 1이며, 구간의 '거의 전부'를 차지한다."
+      },
+      "wrong": [
+        {
+          "en": "Irrational numbers also have measure 0.",
+          "ko": "무리수도 측도가 0이다."
+        },
+        {
+          "en": "Irrational numbers have measure 0.5.",
+          "ko": "무리수의 측도는 0.5이다."
+        },
+        {
+          "en": "We cannot determine the measure of irrational numbers.",
+          "ko": "무리수의 측도는 결정할 수 없다."
+        },
+        {
+          "en": "Irrational numbers are also countable.",
+          "ko": "무리수도 셀 수 있다."
+        }
+      ]
+    },
+    {
+      "problem": {
+        "en": "The 'Cents' unit used by musicians to measure pitch difference has what mathematical relationship with frequency?",
+        "ko": "음악가들이 음정의 차이를 측정할 때 사용하는 '센트(Cents)' 단위는 주파수와 어떤 수학적 관계가 있습니까?"
+      },
+      "right": {
+        "en": "Logarithmic",
+        "ko": "로그 관계 (Logarithmic)"
+      },
+      "wrong": [
+        {
+          "en": "Linear",
+          "ko": "선형 관계 (Linear)"
+        },
+        {
+          "en": "Exponential",
+          "ko": "지수 관계 (Exponential)"
+        },
+        {
+          "en": "Quadratic",
+          "ko": "이차 함수 관계 (Quadratic)"
+        },
+        {
+          "en": "Inversely Proportional",
+          "ko": "반비례 관계 (Inversely Proportional)"
+        }
+      ]
+    },
+    {
+      "problem": {
+        "en": "What is the formal definition of a set being 'Countable'?",
+        "ko": "어떤 집합이 '셀 수 있다(Countable)'는 것의 공식적인 정의는 무엇입니까?"
+      },
+      "right": {
+        "en": "Can establish a 1-to-1 correspondence with Natural numbers.",
+        "ko": "자연수(Natural numbers)와 일대일 대응을 만들 수 있다."
+      },
+      "wrong": [
+        {
+          "en": "Has a finite number of elements.",
+          "ko": "원소의 개수가 유한하다."
+        },
+        {
+          "en": "Is continuous on the number line.",
+          "ko": "수직선 상에서 연속적이다."
+        },
+        {
+          "en": "Can find the largest element.",
+          "ko": "가장 큰 원소를 찾을 수 있다."
+        },
+        {
+          "en": "Can be stored in a computer.",
+          "ko": "컴퓨터로 모두 저장할 수 있다."
+        }
+      ]
+    },
+    {
+      "problem": {
+        "en": "Physically, what is the main reason two notes with simple integer ratios (2:1, 3:2) sound 'consonant'?",
+        "ko": "물리적으로, 간단한 정수비(2:1, 3:2)의 두 음이 '협화음'으로 들리는 주된 이유는 무엇입니까?"
+      },
+      "right": {
+        "en": "The overtones/harmonics of the two notes align or mesh well.",
+        "ko": "두 음의 배음(Overtone/Harmonics)이 서로 일치하거나 잘 맞물리기 때문이다."
+      },
+      "wrong": [
+        {
+          "en": "The wavelengths of the two notes are exactly the same.",
+          "ko": "두 음의 파장이 정확히 같기 때문이다."
+        },
+        {
+          "en": "The amplitudes of the two notes are the same.",
+          "ko": "두 음의 소리 크기(Amplitude)가 같기 때문이다."
+        },
+        {
+          "en": "The speed of sound is proportional to frequency.",
+          "ko": "소리의 속도가 주파수에 비례하기 때문이다."
+        },
+        {
+          "en": "Because the two notes destructively interfere.",
+          "ko": "두 음이 반대 위상으로 상쇄 간섭하기 때문이다."
+        }
+      ]
+    },
+    {
+      "problem": {
+        "en": "If the probability of picking a rational number randomly between 0 and 1 is 0, does this mean picking a rational is 'Impossible'?",
+        "ko": "만약 0에서 1 사이의 실수를 무작위로 선택할 때 유리수가 뽑힐 확률이 0이라면, 이것은 유리수를 뽑는 것이 '불가능(Impossible)'하다는 뜻입니까?"
+      },
+      "right": {
+        "en": "No. Probability 0 does not mean impossible - it means 'almost never' happens.",
+        "ko": "아니요. 확률 0은 불가능을 의미하지 않습니다 - '거의 절대 일어나지 않음'을 의미합니다."
+      },
+      "wrong": [
+        {
+          "en": "Yes, probability 0 always means the event is logically impossible.",
+          "ko": "네, 확률 0은 항상 논리적으로 불가능한 사건을 의미합니다."
+        },
+        {
+          "en": "Yes, because rational numbers do not actually exist on the number line.",
+          "ko": "네, 유리수는 실제로 수직선 위에 존재하지 않기 때문입니다."
+        },
+        {
+          "en": "No, the probability is actually a very small positive number like 0.0001, not exactly 0.",
+          "ko": "아니요, 확률은 사실 0.0001처럼 매우 작은 양수이지 정확히 0은 아닙니다."
+        },
+        {
+          "en": "The question is undefined because we cannot pick truly random real numbers.",
+          "ko": "진정한 무작위 실수를 선택할 수 없으므로 질문 자체가 정의되지 않습니다."
+        }
+      ]
+    }
+  ]
+}

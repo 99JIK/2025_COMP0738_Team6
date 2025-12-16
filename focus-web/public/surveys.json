@@ -1,0 +1,387 @@
+{
+  "common": {
+    "title": {
+      "en": "Learning Experience Survey",
+      "ko": "학습 경험 설문"
+    },
+    "description": {
+      "en": "Please rate your learning experience",
+      "ko": "학습 경험을 평가해주세요"
+    },
+    "sections": [
+      {
+        "id": "focused_attention",
+        "title": {
+          "en": "Focused Attention",
+          "ko": "집중적 주의"
+        },
+        "questions": [
+          {
+            "id": "fa1",
+            "text": {
+              "en": "While using this system, I was completely absorbed in the task I was doing",
+              "ko": "나는 이 시스템을 사용하는 동안, 내가 하고 있던 경험(과제)에 완전히 빠져들었다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "fa2",
+            "text": {
+              "en": "While using this system, I lost track of time",
+              "ko": "이 시스템을 사용하다 보니, 시간이 어떻게 흘러갔는지 모를 정도였다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "fa3",
+            "text": {
+              "en": "I was deeply engaged in the experience of using this system",
+              "ko": "나는 이 시스템을 사용하는 경험(과제 수행과정)에 깊이 몰입해 있었다"
+            },
+            "type": "likert",
+            "scale": 5
+          }
+        ]
+      },
+      {
+        "id": "perceived_usability",
+        "title": {
+          "en": "Perceived Usability",
+          "ko": "지각된 사용성"
+        },
+        "questions": [
+          {
+            "id": "pu1",
+            "text": {
+              "en": "I felt frustrated while using this system",
+              "ko": "이 시스템을 사용하는 동안 좌절감(짜증, 답답함)을 느꼈다"
+            },
+            "type": "likert",
+            "scale": 5,
+            "reversed": true
+          },
+          {
+            "id": "pu2",
+            "text": {
+              "en": "I found the operation of this system confusing",
+              "ko": "이 시스템의 사용법이나 작동 방식이 혼란스럽다고 느꼈다"
+            },
+            "type": "likert",
+            "scale": 5,
+            "reversed": true
+          },
+          {
+            "id": "pu3",
+            "text": {
+              "en": "Using this system was mentally demanding",
+              "ko": "이 시스템을 사용하는 것은 정신적으로 힘든 일(부담)이었다"
+            },
+            "type": "likert",
+            "scale": 5,
+            "reversed": true
+          }
+        ]
+      },
+      {
+        "id": "reward_factor",
+        "title": {
+          "en": "Reward Factor",
+          "ko": "보상 요인"
+        },
+        "questions": [
+          {
+            "id": "rw1",
+            "text": {
+              "en": "Using this system was a worthwhile experience",
+              "ko": "이 시스템을 사용한 것은 가치 있는 경험이었다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "rw2",
+            "text": {
+              "en": "Overall, the experience of using this system was beneficial and rewarding",
+              "ko": "전반적으로 이 시스템을 사용한 경험은 유익하고 보람 있었다"
+            },
+            "type": "likert",
+            "scale": 5
+          }
+        ]
+      },
+      {
+        "id": "intrinsic_load",
+        "title": {
+          "en": "Content Difficulty (Intrinsic Load)",
+          "ko": "내용의 난이도 (내재적 부하)"
+        },
+        "questions": [
+          {
+            "id": "il1",
+            "text": {
+              "en": "The topics/concepts covered in this video were very complex",
+              "ko": "이 영상에서 다룬 주제/개념은 매우 복잡했다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "il2",
+            "text": {
+              "en": "The content of this video was difficult to understand",
+              "ko": "이 영상의 내용은 이해하기 어려웠다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "il3",
+            "text": {
+              "en": "This video contained a lot of explanations and specialized knowledge",
+              "ko": "이 영상의 내용은 많은 설명과 전문적인 지식을 담고 있었다"
+            },
+            "type": "likert",
+            "scale": 5
+          }
+        ]
+      },
+      {
+        "id": "extraneous_load",
+        "title": {
+          "en": "Learning Environment (Extraneous Load)",
+          "ko": "학습 환경 및 방식 (외재적 부하)"
+        },
+        "questions": [
+          {
+            "id": "el1",
+            "text": {
+              "en": "The way this video was explained or the learning environment made it very difficult to understand the content",
+              "ko": "이 영상의 설명 방식이나 학습 환경은 내용을 이해하는 것을 매우 어렵게 만들었다"
+            },
+            "type": "likert",
+            "scale": 5,
+            "reversed": true
+          },
+          {
+            "id": "el2",
+            "text": {
+              "en": "The explanations or activities (stimuli) provided during learning were unclear and ineffective",
+              "ko": "학습 중에 제공된 설명이나 활동(자극)은 불분명하고 효과적이지 않았다"
+            },
+            "type": "likert",
+            "scale": 5,
+            "reversed": true
+          },
+          {
+            "id": "el3",
+            "text": {
+              "en": "Various elements experienced during learning (such as alerts) interfered with understanding the content",
+              "ko": "학습 과정에서 경험한 다양한 요소들(알림 등)이 내용을 이해하는 데 방해가 되었다"
+            },
+            "type": "likert",
+            "scale": 5,
+            "reversed": true
+          }
+        ]
+      },
+      {
+        "id": "germane_load",
+        "title": {
+          "en": "Learning Effort (Germane Load)",
+          "ko": "학습 노력 (본질적 부하)"
+        },
+        "questions": [
+          {
+            "id": "gl1",
+            "text": {
+              "en": "I concentrated to properly understand the content of this video",
+              "ko": "나는 이 영상의 내용을 제대로 이해하기 위해 집중했다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "gl2",
+            "text": {
+              "en": "I made an effort to understand the concepts and content of the video",
+              "ko": "나는 영상의 개념과 내용을 이해하려고 노력했다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "gl3",
+            "text": {
+              "en": "I worked hard to internalize the content of the video as my own knowledge",
+              "ko": "나는 영상의 내용을 내 지식으로 만들기 위해 애썼다"
+            },
+            "type": "likert",
+            "scale": 5
+          }
+        ]
+      }
+    ]
+  },
+  "strict_mode": {
+    "title": {
+      "en": "Focus Monitoring Feedback",
+      "ko": "집중 모니터링 피드백"
+    },
+    "description": {
+      "en": "Please share your experience with the focus monitoring system",
+      "ko": "집중 모니터링 시스템에 대한 경험을 공유해주세요"
+    },
+    "sections": [
+      {
+        "id": "disturbance",
+        "title": {
+          "en": "Perceived Disturbance",
+          "ko": "방해 정도"
+        },
+        "questions": [
+          {
+            "id": "dist1",
+            "text": {
+              "en": "The automatic pauses disrupted my learning flow",
+              "ko": "자동 일시정지가 학습 흐름을 방해했습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "dist2",
+            "text": {
+              "en": "The focus alerts (popups) were distracting",
+              "ko": "집중 알림(팝업)이 산만하게 느껴졌습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          }
+        ]
+      },
+      {
+        "id": "helpfulness",
+        "title": {
+          "en": "Perceived Helpfulness",
+          "ko": "도움 정도"
+        },
+        "questions": [
+          {
+            "id": "help1",
+            "text": {
+              "en": "The focus monitoring helped me stay attentive",
+              "ko": "집중 모니터링이 주의를 유지하는 데 도움이 되었습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "help2",
+            "text": {
+              "en": "The automatic pauses helped me refocus when I was distracted",
+              "ko": "자동 일시정지가 산만해졌을 때 다시 집중하는 데 도움이 되었습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "help3",
+            "text": {
+              "en": "I learned more effectively because of the focus monitoring",
+              "ko": "집중 모니터링 덕분에 더 효과적으로 학습했습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "help4",
+            "text": {
+              "en": "I would recommend this feature to other learners",
+              "ko": "다른 학습자에게 이 기능을 추천하겠습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          }
+        ]
+      },
+      {
+        "id": "control",
+        "title": {
+          "en": "Sense of Control",
+          "ko": "통제감"
+        },
+        "questions": [
+          {
+            "id": "ctrl1",
+            "text": {
+              "en": "I felt in control of my learning experience",
+              "ko": "학습 경험을 통제하고 있다고 느꼈습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "ctrl2",
+            "text": {
+              "en": "The system responded appropriately to my focus level",
+              "ko": "시스템이 내 집중 수준에 적절하게 반응했습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "ctrl3",
+            "text": {
+              "en": "I felt the focus detection was accurate",
+              "ko": "집중 감지가 정확하다고 느꼈습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "ctrl4",
+            "text": {
+              "en": "I felt comfortable being monitored during learning",
+              "ko": "학습 중 모니터링되는 것이 편안했습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          }
+        ]
+      },
+      {
+        "id": "overall_strict",
+        "title": {
+          "en": "Overall Assessment",
+          "ko": "종합 평가"
+        },
+        "questions": [
+          {
+            "id": "os1",
+            "text": {
+              "en": "I prefer learning with focus monitoring over without it",
+              "ko": "집중 모니터링 없이 학습하는 것보다 있는 것을 선호합니다"
+            },
+            "type": "likert",
+            "scale": 5
+          },
+          {
+            "id": "os2",
+            "text": {
+              "en": "I would use this feature again in future learning sessions",
+              "ko": "향후 학습에서 이 기능을 다시 사용하겠습니다"
+            },
+            "type": "likert",
+            "scale": 5
+          }
+        ]
+      }
+    ]
+  },
+  "likert_labels": {
+    "en": ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"],
+    "ko": ["매우 그렇지 않다", "그렇지 않다", "보통이다", "그렇다", "매우 그렇다"]
+  }
+}

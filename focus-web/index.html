@@ -13,6 +13,8 @@
   <link rel="manifest" href="/manifest.json">
   <title>FOCUS</title>
   <link rel="stylesheet" href="/src/styles.css">
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
   <div id="app">
@@ -34,9 +36,11 @@
     <main id="list-page">
       <div class="hero-section">
         <div class="hero-content">
-          <h2 id="list-title">영상 목록</h2>
+          <h2 id="list-title" class="focus-acronym">
+            <span class="highlight">F</span>acial <span class="highlight">O</span>bservation & <span class="highlight">C</span>oncentration <span class="highlight">U</span>nderstanding <span class="highlight">S</span>ystem
+          </h2>
           <p id="hero-description" class="hero-description">
-            AI 기반 집중도 모니터링과 함께 학습하세요
+            얼굴 인식 기반 집중도 모니터링과 함께 학습하세요
           </p>
         </div>
       </div>
@@ -59,18 +63,34 @@
             <span class="mode-name" id="mode-normal-name">일반</span>
             <span class="mode-desc" id="mode-normal-desc">일반적인 영상 플레이어</span>
           </button>
-          <button class="mode-btn" data-mode="nocontrol">
-            <span class="mode-name" id="mode-nocontrol-name">조작 불가</span>
-            <span class="mode-desc" id="mode-nocontrol-desc">재생/일시정지 조작 불가</span>
+          <button class="mode-btn" data-mode="nonintrusive">
+            <span class="mode-name" id="mode-nonintrusive-name">비간섭</span>
+            <span class="mode-desc" id="mode-nonintrusive-desc">집중 저하 시 부드러운 팝업 (선택적 일시정지)</span>
           </button>
-          <button class="mode-btn" data-mode="scoreonly">
-            <span class="mode-name" id="mode-scoreonly-name">점수만</span>
-            <span class="mode-desc" id="mode-scoreonly-desc">집중 점수만 표시</span>
+          <button class="mode-btn" data-mode="intrusive">
+            <span class="mode-name" id="mode-intrusive-name">간섭</span>
+            <span class="mode-desc" id="mode-intrusive-desc">집중 안 하면 자동 일시정지, 볼륨 조절</span>
           </button>
-          <button class="mode-btn" data-mode="strict">
-            <span class="mode-name" id="mode-strict-name">엄격</span>
-            <span class="mode-desc" id="mode-strict-desc">집중 안 하면 일시정지, 볼륨 조절</span>
-          </button>
+        </div>
+        <div class="mode-settings" id="mode-settings">
+          <label class="setting-label">
+            <span id="cooldown-setting-label">팝업 간격</span>
+            <div class="cooldown-input-wrapper">
+              <input type="number" id="cooldown-input" value="30" min="5" max="600">
+              <span id="cooldown-unit">초</span>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Non-intrusive Focus Popup -->
+    <div id="focus-popup" class="focus-popup hidden">
+      <div class="focus-popup-content">
+        <p id="focus-popup-title" class="focus-popup-title">혹시 잠깐 집중에 어려움이 있었을까요?</p>
+        <div class="focus-popup-buttons">
+          <button id="popup-pause-btn" class="popup-btn popup-pause">잠시 멈추겠습니다</button>
+          <button id="popup-continue-btn" class="popup-btn popup-continue">아니요, 괜찮습니다</button>
         </div>
       </div>
     </div>
@@ -95,23 +115,47 @@
         <div id="video-placeholder">
           <button id="play-video-btn" class="primary-btn hidden">영상 시청</button>
         </div>
+        <button id="resume-btn" class="resume-btn hidden">▶ 다시 시작</button>
         <div id="unfocus-overlay" class="hidden">
           <div class="unfocus-message" id="unfocus-message">집중해주세요!</div>
         </div>
-      </div>
-
-      <div id="side-panel">
-        <div id="focus-indicator">
-          <div class="score-circle">
-            <span id="score-value">0</span>
+        <!-- Debug Overlay: Fixed position on video -->
+        <div id="debug-overlay" class="hidden">
+          <div class="debug-overlay-row">
+            <div class="debug-score">
+              <span id="score-value">0</span>
+            </div>
+            <div id="au-display" class="hidden">
+              <div id="au-values"></div>
+            </div>
+          </div>
+          <div id="gaze-debug" class="gaze-debug hidden">
+            <span id="gaze-info"></span>
           </div>
           <p id="status-text">준비 중</p>
         </div>
+        <!-- Camera Preview: Inside video-container -->
+        <div id="side-panel" class="hidden">
+          <div id="camera-preview-container" class="hidden">
+            <video id="camera-preview" autoplay playsinline muted></video>
+            <canvas id="landmark-canvas"></canvas>
+          </div>
+        </div>
+      </div>
 
-
-        <div id="camera-preview-container" class="hidden">
-          <video id="camera-preview" autoplay playsinline muted></video>
-          <canvas id="landmark-canvas"></canvas>
+      <!-- Mobile Portrait: Subtitle Area + CC Button -->
+      <div id="mobile-subtitle-wrapper">
+        <div id="mobile-subtitle-area" class="hidden">
+          <span class="subtitle-text"></span>
+        </div>
+        <div id="mobile-subtitle-controls">
+          <button id="mobile-subtitle-toggle" class="subtitle-btn" title="Subtitles">
+            <span class="subtitle-icon">CC</span>
+          </button>
+          <div id="mobile-subtitle-menu" class="hidden">
+            <button class="subtitle-option" data-lang="off">Off</button>
+            <button class="subtitle-option" data-lang="ko">한국어</button>
+          </div>
         </div>
       </div>
     </main>
@@ -129,10 +173,97 @@
           <div id="quiz-answers" class="quiz-answers"></div>
         </div>
         <div id="quiz-result" class="quiz-result hidden">
-          <div class="result-score">
-            <span id="result-score-value">0</span><span id="result-score-unit">/100</span>
+          <div class="quiz-complete-message">
+            <div class="quiz-complete-icon">&#10003;</div>
+            <h3 id="quiz-complete-title">퀴즈 완료!</h3>
           </div>
-          <button id="back-to-list-btn" class="primary-btn"></button>
+          <div class="participant-input">
+            <label for="participant-name" id="participant-label">참가자 이름</label>
+            <input type="text" id="participant-name" placeholder="이름을 입력하세요" maxlength="50">
+          </div>
+          <button id="submit-results-btn" class="primary-btn">결과 제출</button>
+        </div>
+      </div>
+    </main>
+
+    <main id="result-page" class="hidden">
+      <div class="result-container">
+        <div class="result-header">
+          <h2 id="result-title">학습 완료</h2>
+          <p id="result-description" class="result-description">학습 결과가 제출되었습니다</p>
+        </div>
+
+        <div class="result-summary">
+          <div class="result-item">
+            <span class="result-label" id="result-video-label">시청 영상</span>
+            <span class="result-value" id="result-video-name">-</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label" id="result-mode-label">학습 모드</span>
+            <span class="result-value" id="result-mode-name">-</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label" id="result-focus-label">평균 집중 점수</span>
+            <span class="result-value" id="result-focus-score">-</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label" id="result-quiz-label">퀴즈 점수</span>
+            <span class="result-value" id="result-quiz-score">-</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label" id="result-survey-label">설문 완료</span>
+            <span class="result-value" id="result-survey-status">✓</span>
+          </div>
+        </div>
+
+        <div id="result-sending" class="result-sending">
+          <div class="sending-spinner"></div>
+          <p id="result-sending-text">결과 전송 중...</p>
+        </div>
+
+        <div id="result-success" class="result-success hidden">
+          <div class="success-icon">&#10003;</div>
+          <p id="result-success-text">결과가 성공적으로 전송되었습니다</p>
+        </div>
+
+        <div id="result-error" class="result-error hidden">
+          <p id="result-error-text">전송 실패. 로컬에 저장되었습니다.</p>
+        </div>
+
+        <button id="back-to-list-btn" class="primary-btn">목록으로 돌아가기</button>
+      </div>
+    </main>
+
+    <main id="survey-page" class="hidden">
+      <div class="survey-container">
+        <div class="survey-header">
+          <h2 id="survey-title">학습 경험 설문</h2>
+          <p id="survey-description" class="survey-description">학습 경험을 평가해주세요</p>
+          <div class="survey-progress">
+            <div class="survey-progress-bar">
+              <div class="survey-progress-fill" id="survey-progress-fill"></div>
+            </div>
+            <span class="survey-progress-text"><span id="survey-current-section">1</span> / <span id="survey-total-sections">2</span></span>
+          </div>
+        </div>
+
+        <div class="survey-content" id="survey-content">
+          <div class="survey-section">
+            <h3 class="survey-section-title" id="survey-section-title"></h3>
+            <div class="survey-questions" id="survey-questions"></div>
+          </div>
+        </div>
+
+        <div class="survey-navigation">
+          <button id="survey-prev-btn" class="secondary-btn" disabled>이전</button>
+          <button id="survey-next-btn" class="primary-btn">다음</button>
+        </div>
+
+        <div id="survey-complete" class="survey-complete hidden">
+          <div class="survey-complete-icon">&#10003;</div>
+          <h3 id="survey-complete-title">설문이 완료되었습니다</h3>
+          <p id="survey-complete-message">소중한 피드백 감사합니다!</p>
+          <button id="survey-finish-btn" class="primary-btn">목록으로 돌아가기</button>
         </div>
       </div>
     </main>
